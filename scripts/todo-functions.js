@@ -52,9 +52,16 @@ const renderTodos = (todos, filters) => {
     .querySelector("#todos")
     .appendChild(generateSummaryDOM(incompleteTodos));
 
-  filteredTodos.forEach((todo) => {
-    document.querySelector("#todos").appendChild(generateTodoDOM(todo));
-  });
+  if (filteredTodos.length) {
+    filteredTodos.forEach((todo) => {
+      document.querySelector("#todos").appendChild(generateTodoDOM(todo));
+    });
+  } else {
+    const emptyNote = document.createElement("p");
+    emptyNote.setAttribute("id", "empty-note");
+    emptyNote.textContent = "No To Do's to show";
+    document.querySelector("#todos").appendChild(emptyNote);
+  }
 };
 
 // Get the DOM elements for an individual note
@@ -69,8 +76,8 @@ const generateTodoDOM = (todo) => {
   checkbox.classList.add("todo-checkbox");
   checkbox.checked = todo.completed;
   checkbox.checked
-    ? (todoEl.className = "to-do completed")
-    : (todoEl.className = "to-do");
+    ? todoEl.classList.add("to-do", "completed")
+    : todoEl.classList.add("to-do");
   todoEl.appendChild(checkbox);
   checkbox.addEventListener("change", () => {
     toggleTodo(todo.id);
@@ -100,9 +107,7 @@ const generateSummaryDOM = (incompleteTodos) => {
   const summary = document.createElement("h2");
   const length = incompleteTodos.length;
   const showS = length !== 1 ? "'s" : "";
-  summary.textContent = length
-    ? `You have ${length} To Do${showS} left`
-    : "No To Do's in this list";
+  summary.textContent = `You have ${length} To Do${showS} left`;
   return summary;
 };
 
