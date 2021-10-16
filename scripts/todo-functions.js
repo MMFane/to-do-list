@@ -66,7 +66,11 @@ const generateTodoDOM = (todo) => {
 
   // Setup todo checkbox
   checkbox.setAttribute("type", "checkbox");
+  checkbox.classList.add("todo-checkbox");
   checkbox.checked = todo.completed;
+  checkbox.checked
+    ? (todoEl.className = "to-do completed")
+    : (todoEl.className = "to-do");
   todoEl.appendChild(checkbox);
   checkbox.addEventListener("change", () => {
     toggleTodo(todo.id);
@@ -81,6 +85,7 @@ const generateTodoDOM = (todo) => {
   // Setup the remove button
   removeButton.textContent = "x";
   todoEl.appendChild(removeButton);
+  removeButton.classList.add("remove");
   removeButton.addEventListener("click", () => {
     removeTodo(todo.id);
     saveTodos(todos);
@@ -98,6 +103,8 @@ const generateSummaryDOM = (incompleteTodos) => {
 };
 
 const generatePlaceholder = (placeholderList) => {
-  const index = Math.floor(Math.random() * placeholderList.length);
-  return placeholderList[index];
+  if (placeholderList) {
+    const index = Math.floor(Math.random() * placeholderList.length);
+    return placeholderList[index];
+  }
 };

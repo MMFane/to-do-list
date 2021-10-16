@@ -25,5 +25,3 @@ const placeholders = [
   "Try something new",
   "Try something that makes you scared",
 ];
-
-export default placeholders;

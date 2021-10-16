@@ -1,8 +1,11 @@
 :root {
+  --accent: #dafeb7;
+  --accent-dark: #96b377;
+  --accent-light: #dff3cc;
   --background: #605b56;
+  --element: #837a75;
   --header: #acc18a;
+  --shadow: rgba(0, 0, 0, 0.2);
   --text: #f2fbe0;
   --text-invert: #302d2b;
-  --element: #837a75;
-  --accent: #dafeb7;
 }

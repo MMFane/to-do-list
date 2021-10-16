@@ -1,14 +1,53 @@
 @import "./colors.css";
+@import "./sizes.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: var(--background);
   color: var(--text);
+}
+
+button {
+  background-color: var(--accent);
+  border: none;
+  border-radius: 10px;
+  padding: var(--padding);
+}
+
+button:hover {
+  background-color: var(--accent-light);
+}
+
+button:active {
+  background-color: var(--accent-dark);
+}
+
+button.remove {
+  max-height: 33px;
+  min-height: 33px;
+  max-width: 33px;
+  min-width: 33px;
+  margin-left: var(--padding);
+  flex-grow: 1;
+}
+
+input.todo-checkbox {
+  margin-right: var(--padding);
+  background-color: var(--accent);
+}
+
+input {
+  padding: var(--padding);
+}
+
+label {
+  display: block;
 }
 
 #header {
@@ -17,6 +56,11 @@ body {
   background-color: var(--header);
   color: var(--text-invert);
   text-align: center;
+}
+
+#new-todo {
+  flex-grow: 1;
+  margin-right: var(--padding);
 }
 
 #add-todo,
@@ -29,10 +73,38 @@ body {
 
 #add-todo {
   padding: 3rem 0;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 #todo-list {
   background-color: var(--element);
+  box-shadow: 0 0 10px var(--shadow);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#todo-list label {
+  text-align: center;
+  padding: 1rem;
+}
+
+.to-do {
+  width: 100%;
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--background);
+}
+
+.to-do.completed {
+  color: var(--text-invert);
+  opacity: 0.5;
+}
+
+.to-do span {
+  flex-grow: 1;
 }
