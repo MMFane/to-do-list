@@ -28,7 +28,7 @@ document.querySelector("#add-todo").addEventListener("submit", (e) => {
     });
     saveTodos(todos);
     renderTodos(todos, filters);
-    value = "";
+    e.target[0].value = "";
   }
 });
 
