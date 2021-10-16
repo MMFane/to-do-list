@@ -1,8 +1,29 @@
-export default placeholders = [
+const placeholders = [
   "Pet the cat",
   "Feed the dog",
+  "Take the dog for a walk",
   "Learn an instrument",
-  "Play my favorite videogame",
+  "Play a videogame",
+  "Play some music",
   "Dance it out",
   "Go outside",
+  "Make a new goal",
+  "Call Mom",
+  "Call Dad",
+  "Call a loved one",
+  "Draw a picture",
+  "Plant a tree",
+  "Tell someone 'thank you'",
+  "Take a bath",
+  "Sip some tea",
+  "Bake some brownies",
+  "Tell someone 'I love you'",
+  "Go for a walk",
+  "Plant a tree",
+  "Take a nap",
+  "Do some yoga",
+  "Try something new",
+  "Try something that makes you scared",
 ];
+
+export default placeholders;

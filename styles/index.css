@@ -19,7 +19,7 @@ body {
   text-align: center;
 }
 
-#new-todo,
+#add-todo,
 #todo-list {
   width: 50%;
   min-width: 275px;
@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
 }
 
-#new-todo {
+#add-todo {
   padding: 3rem 0;
   text-align: center;
 }

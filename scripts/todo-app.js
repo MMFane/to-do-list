@@ -1,6 +1,10 @@
 "use strict";
+import placeholders from "../data/placeholders.js";
 
 let todos = getSavedTodos();
+const inputNewTodo = document.querySelector("#new-todo");
+
+inputNewTodo.placeholder = generatePlaceholder(placeholders);
 
 const filters = {
   searchText: "",
@@ -14,7 +18,7 @@ document.querySelector("#search-text").addEventListener("input", (e) => {
   renderTodos(todos, filters);
 });
 
-document.querySelector("#new-todo").addEventListener("submit", (e) => {
+document.querySelector("#add-todo").addEventListener("submit", (e) => {
   e.preventDefault();
   todos.push({
     id: uuidv4(),
