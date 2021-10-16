@@ -87,8 +87,11 @@ label {
 }
 
 #todo-list label {
-  text-align: center;
   padding: 1rem;
+}
+
+#todo-list #hide-checkbox {
+  text-align: center;
 }
 
 .to-do {
