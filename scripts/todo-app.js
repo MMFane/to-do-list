@@ -19,14 +19,17 @@ document.querySelector("#search-text").addEventListener("input", (e) => {
 
 document.querySelector("#add-todo").addEventListener("submit", (e) => {
   e.preventDefault();
-  todos.push({
-    id: uuidv4(),
-    text: e.target[0].value,
-    completed: false,
-  });
-  saveTodos(todos);
-  renderTodos(todos, filters);
-  e.target[0].value = "";
+  let value = e.target[0].value.trim();
+  if (value.length > 0) {
+    todos.push({
+      id: uuidv4(),
+      text: value,
+      completed: false,
+    });
+    saveTodos(todos);
+    renderTodos(todos, filters);
+    value = "";
+  }
 });
 
 document.querySelector("#hide-completed").addEventListener("change", (e) => {
